@@ -1,0 +1,23 @@
+{
+  "name": "format",
+  "main": "format.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/andrefarzat/format",
+  "authors": [
+    "Andre Farzat <andrefarzat@gmail.com>"
+  ],
+  "description": "Format string function for javascript",
+  "keywords": [
+    "format",
+    "string",
+    "str"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
