@@ -1,4 +1,4 @@
-descibre("Main tests", function(){
+describe("Main tests", function(){
    
     it('Simple test', function(){
 
