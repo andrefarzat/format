@@ -1,7 +1,7 @@
 {
   "name": "format",
   "main": "format.js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "homepage": "https://github.com/andrefarzat/format",
   "authors": [
     "Andre Farzat <andrefarzat@gmail.com>"
