@@ -1,0 +1,34 @@
+{
+  "name": "format",
+  "version": "0.0.0",
+  "description": "format ========",
+  "main": "format.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "karma": "~0.12.6"
+  },
+  "devDependencies": {
+    "karma": "~0.12.6",
+    "phantomjs": "~1.9.7-3",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "karma-jasmine": "~0.1.5"
+  },
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrefarzat/format.git"
+  },
+  "keywords": [
+    "intent"
+  ],
+  "author": "Andre Farzat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrefarzat/format/issues"
+  },
+  "homepage": "https://github.com/andrefarzat/format"
+}
