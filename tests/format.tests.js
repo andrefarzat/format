@@ -10,6 +10,13 @@ describe("Main tests", function(){
         expect(result).toBe(expected);
     });
 
+    it('should return the original text', function(){
+        var tmpl = 'Nothing {1} do nowhere {1} go',
+            result = format(tmpl, 'to');
+
+        expect(result).toBe(tmpl);
+    });
+
 
     describe('within objects', function(){
 
@@ -18,6 +25,13 @@ describe("Main tests", function(){
                 result = format(tmpl, { 'time': '12:00' } );
 
             expect(result).toBe('The time is 12:00 in here');
+        });
+
+        it('should return the original text', function(){
+            var tmpl = 'Nothing {no} do nowhere {no} go',
+                result = format(tmpl, { 'something': 'to' } );
+
+            expect(result).toBe(tmpl);
         });
 
         it('should get from a property from the given key', function(){
