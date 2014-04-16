@@ -10,13 +10,62 @@
 
 }(this, function (window) {
 
-    return function format(){
-        var args = [].slice.call(arguments, 1),
-            str = arguments[0];
+    var regexp = /\{([\w\:]+|)\}/g,
+        regexpObj = /\{([\w\:\.]+|)\}/g;
 
-        return str.replace(/\{(\d+)\}/g, function(a,b){
-            return typeof args[b] != 'undefined' ? args[b] : a;
+    /**
+     * @param  {*} value
+     * @return {Boolean}
+     */
+    function isUndefined(value){
+        return typeof value === 'undefined';
+    }
+
+    /**
+     * @private
+     * Format the string given the string and the args as array
+     * @param  {String} str
+     * @param  {Array} args
+     * @return {String}
+     */
+    function formatNormalArguments(str, args){
+
+        return str.replace(regexp, function(a,b){
+            return isUndefined(args[b])? a : args[b];
         });
+
+    }
+
+    /**
+     * @private
+     * Format the given string using the object
+     * @param  {String} str
+     * @param  {Object} obj
+     * @return {String}
+     */
+    function formatUsingObject(str, obj){
+
+        return str.replace(regexpObj, function(a,b){
+            b = b.split('.');
+            var value = obj[b.shift()];
+
+            while ( b.length ) {
+                if( isUndefined(value) ){
+                    break;
+                }
+                value = value[b.shift()];
+            }
+
+            return isUndefined(value) ? a : value;
+        });
+
+    }
+
+    return function format(str, obj){
+
+        return obj.constructor === Object ?
+            formatUsingObject(str, obj) :
+            formatNormalArguments(str, [].slice.call(arguments, 1));
 
     };
 
