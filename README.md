@@ -8,7 +8,9 @@ Format string function for javascript
 
 ### Installing
 
-`bower install format --save`
+```sh
+bower install format --save
+```
 
 ### Usage
 
