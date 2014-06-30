@@ -27,7 +27,7 @@ bower install format --save
     var formatted = format(txt, { 'one': 'money', 'two': 'show', 'three': 'get ready' });
     // also results: "It's one for the money, two for the show, three to get ready"
 
-    // It's possible to access properties of the obejct
+    // It's possible to access properties of the object
     var txt = 'My name is {name.lastName}, {name.firstName} {name.lastName}';
     var formatted = format(txt, { 'name': { 'firstName': 'James', 'lastName': 'Bond' } });
     // results: "My name is Bond, James Bond"
