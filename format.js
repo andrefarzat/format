@@ -63,7 +63,7 @@
 
     return function format(str, obj){
 
-        return !isUndefined(obj) && obj.constructor === Object ?
+        return obj && obj.constructor === Object ?
             formatUsingObject(str, obj) :
             formatNormalArguments(str, [].slice.call(arguments, 1));
 

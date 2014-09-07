@@ -31,6 +31,13 @@ describe("Main tests", function(){
         expect(result).toBe('Something {0} to do');
     });
 
+    it('should use "null" when passed as parameter', function(){
+        var tmpl = 'Something {0}',
+            result = format(tmpl, null);
+
+        expect(result).toBe('Something null');
+    });
+
 
     describe('within objects', function(){
 
