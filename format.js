@@ -1,5 +1,5 @@
 (function (root, factory) {
-    
+
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define([root], factory);
@@ -63,7 +63,7 @@
 
     return function format(str, obj){
 
-        return obj.constructor === Object ?
+        return !isUndefined(obj) && obj.constructor === Object ?
             formatUsingObject(str, obj) :
             formatNormalArguments(str, [].slice.call(arguments, 1));
 

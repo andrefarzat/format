@@ -1,5 +1,5 @@
 describe("Main tests", function(){
-   
+
     it('Simple test', function(){
 
         var expected = 'Something cool, really cool',
@@ -15,6 +15,20 @@ describe("Main tests", function(){
             result = format(tmpl, 'to');
 
         expect(result).toBe(tmpl);
+    });
+
+    it('should ignore "undefined" object', function(){
+        var tmpl = 'Something {0}',
+            result = format(tmpl, undefined);
+
+        expect(result).toBe('Something {0}');
+    });
+
+    it('should ignore "undefined" parameters', function(){
+        var tmpl = 'Something {0} {1}',
+            result = format(tmpl, undefined, 'to do');
+
+        expect(result).toBe('Something {0} to do');
     });
 
 
